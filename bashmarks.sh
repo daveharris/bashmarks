@@ -58,6 +58,7 @@ function g {
     source $SDIRS
     target="$(eval $(echo echo $(echo \$DIR_$1)))"
     if [ -d "$target" ]; then
+        echo -e "\033[${GREEN}Moving to ${target}\033[00m"
         cd "$target"
     elif [ ! -n "$target" ]; then
         echo -e "\033[${RED}WARNING: '${1}' bashmark does not exist\033[00m"
